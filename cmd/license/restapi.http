@@ -1,0 +1,388 @@
+### GEST 
+GET http://0.0.0.0:7788/key
+
+### POST
+POST http://0.0.0.0:7788/key
+Content-Type: application/json
+
+{
+    "public":"public2public2", 
+    "private":  "private2private2",
+    "username":"user2",
+    "description":"test insert keyinfo api"
+}
+
+### POST
+POST http://0.0.0.0:7788/user/license
+Content-Type: application/json
+
+{
+    "quota":300, 
+    "period":500,
+    "uuid":"rdrdrdrdrdrdrd",
+    "corporation":"reddit",
+    "version":"v2.7",
+    "homelicense":"测试版:v5",
+    "username":"user3"
+}
+
+### GET
+GET http://0.0.0.0:7788/user/license/user1
+
+### GET
+GET http://0.0.0.0:7788/admin/license
+
+### POST
+POST http://0.0.0.0:7788/admin/license
+Content-Type: application/json
+
+{
+    "updateid": 7,
+    "keyid": 3,
+    "license": "test insert license from front end" 
+}
+
+### POST
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "user3",
+    "password": "p333333" 
+}
+
+### 
+GET http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "aaa" 
+}
+
+### POST
+POST http://0.0.0.0:7788/key
+Content-Type: application/json
+
+{
+    "username":"user4",
+    "description":"test new generate key lib"
+}
+
+### POST
+POST http://0.0.0.0:7788/admin/license
+Content-Type: application/json
+
+{
+    "updateid": 8,
+    "keyid": 12
+}
+
+### POST
+POST  http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "aaa"
+}
+
+### GET
+GET http://0.0.0.0:7788/test
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODI1MDIsImlhdCI6MTYwOTg5NjEwMiwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjEifQ.KaHMKoCjcgczx7-zNF5UY2zUzTmBOUzP9NU5pIKvC7I
+
+
+
+### POST 注册普通用户
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "user4",
+    "password": "123456" 
+}
+
+### POST 用户登录
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "user4",
+    "password": "123456" 
+}
+
+### POST 用户申请license
+### token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODcxNzUsImlhdCI6MTYwOTkwMDc3NSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjQifQ._d4HjrH2DvNJPRnnsAFYMCZ2kP_9ICT3zDLVd0SA3cw
+POST http://0.0.0.0:7788/user/license
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODcxNzUsImlhdCI6MTYwOTkwMDc3NSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjQifQ._d4HjrH2DvNJPRnnsAFYMCZ2kP_9ICT3zDLVd0SA3cw
+
+{
+    "quota":444, 
+    "period":555,
+    "uuid":"insinsinsinsins",
+    "corporation":"instagram",
+    "version":"v2.9",
+    "homelicense":"测试版:v7",
+    "username":"user4"
+}
+
+### POST 管理员登录
+### token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODczNTAsImlhdCI6MTYwOTkwMDk1MCwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjEifQ.0oNeW2909hcrqf4ymDzPdz6MRX32CLJRGBIbA6P1cWo
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "aaa" 
+}
+
+### GET 管理员查询用户的申请
+GET http://0.0.0.0:7788/admin/license
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODczNTAsImlhdCI6MTYwOTkwMDk1MCwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjEifQ.0oNeW2909hcrqf4ymDzPdz6MRX32CLJRGBIbA6P1cWo
+
+### GET 管理员查询所有的公私钥对详细信息
+GET http://0.0.0.0:7788/admin/key
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODczNTAsImlhdCI6MTYwOTkwMDk1MCwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjEifQ.0oNeW2909hcrqf4ymDzPdz6MRX32CLJRGBIbA6P1cWo
+
+### POST 管理员新生成一对公私钥并指定用户
+POST http://0.0.0.0:7788/admin/key
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODczNTAsImlhdCI6MTYwOTkwMDk1MCwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjEifQ.0oNeW2909hcrqf4ymDzPdz6MRX32CLJRGBIbA6P1cWo
+
+{
+    "public":"pucccccccccccccccccccccccccc", 
+    "private":"preeeeeeeeeeeeeeeeeeeeeeeeee",
+    "username":"user4",
+    "description":"test user token & admin token"
+}
+
+### POST 管理员对用户的申请进行更新，分配公私钥并生成license
+POST http://0.0.0.0:7788/admin/license
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODczNTAsImlhdCI6MTYwOTkwMDk1MCwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjEifQ.0oNeW2909hcrqf4ymDzPdz6MRX32CLJRGBIbA6P1cWo
+
+{
+    "updateid": 19,
+    "keyid": 15
+}
+
+### GET 用户查询申请license的状态
+GET http://0.0.0.0:7788/user/license/user4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODcxNzUsImlhdCI6MTYwOTkwMDc3NSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjQifQ._d4HjrH2DvNJPRnnsAFYMCZ2kP_9ICT3zDLVd0SA3cw
+
+////////////////////////////////////八个API测试完毕////////////////////////////////////
+
+### POST 注册普通用户,测试md5加密
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "user6",
+    "password": "number6'spassword" 
+}
+
+### POST 用户登录，测试md5加密
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "user6",
+    "password": "number6'spassword" 
+}
+
+
+
+
+
+
+
+
+///////////////////////////////////YApi文档//////////////////////////////////////////////
+### POST 注册普通用户
+#POST http://172.26.1.9:3000/mock/86/regist
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "user8",
+    "password": "pwd888888" 
+}
+
+### POST 登录
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "user8",
+    "password": "pwd888888" 
+}
+
+### POST 用户登录
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "user7",
+    "password": "pwd7777777" 
+}
+
+### POST 用户申请license
+### token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk5ODcxNzUsImlhdCI6MTYwOTkwMDc3NSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjQifQ._d4HjrH2DvNJPRnnsAFYMCZ2kP_9ICT3zDLVd0SA3cw
+POST http://0.0.0.0:7788/user/license
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzEyMDEsImlhdCI6MTYwOTk4NDgwMSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjcifQ.m3uUaFVj6p_VoQPDnlS28t0FgNs_etHQ3ki6FfNxhBI
+
+{
+    "quota":600, 
+    "period":800,
+    "uuid":"bilibilibilibilibilibilbilibili",
+    "corporation":"bilibili",
+    "version":"v2.99",
+    "homelicense":"测试版:v7.5",
+    "username":"user7"
+}
+
+### POST
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "admin2",
+    "password": "Tpaas@123Admin2_Troila" 
+}
+
+### POST 管理员登录
+### eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzMxMjcsImlhdCI6MTYwOTk4NjcyNywiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjIifQ.vxvcbGIuMY8kbhG5O6IDT9l8qUNq79V2vExdX4YJIwA
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "admin2",
+    "password": "Tpaas@123Admin2_Troila" 
+}
+
+### GET 管理员查询用户的申请
+GET http://0.0.0.0:7788/admin/license
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzMxMjcsImlhdCI6MTYwOTk4NjcyNywiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjIifQ.vxvcbGIuMY8kbhG5O6IDT9l8qUNq79V2vExdX4YJIwA
+
+### GET 管理员查询所有的公私钥对详细信息
+GET http://0.0.0.0:7788/admin/key
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzMxMjcsImlhdCI6MTYwOTk4NjcyNywiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjIifQ.vxvcbGIuMY8kbhG5O6IDT9l8qUNq79V2vExdX4YJIwA
+
+### POST 管理员新生成一对公私钥并指定用户
+POST http://0.0.0.0:7788/admin/key
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzMxMjcsImlhdCI6MTYwOTk4NjcyNywiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjIifQ.vxvcbGIuMY8kbhG5O6IDT9l8qUNq79V2vExdX4YJIwA
+
+{
+    "username":"user8",
+    "description":"YApi Test"
+}
+
+### POST 管理员对用户的申请进行更新，分配公私钥并生成license
+POST http://0.0.0.0:7788/admin/license
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzMxMjcsImlhdCI6MTYwOTk4NjcyNywiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjIifQ.vxvcbGIuMY8kbhG5O6IDT9l8qUNq79V2vExdX4YJIwA
+
+{
+    "updateid": 20,
+    "keyid": 16
+}
+
+### GET 用户查询申请license的状态
+GET http://0.0.0.0:7788/user/license/user7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwNzEyMDEsImlhdCI6MTYwOTk4NDgwMSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjcifQ.m3uUaFVj6p_VoQPDnlS28t0FgNs_etHQ3ki6FfNxhBI
+
+
+
+
+
+
+
+//                /mock/86/license/api/v1
+
+### POST 注册
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "user9",
+    "password": "number9'spassword" 
+}
+
+### POST 登录
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "user9",
+    "password": "number9'spassword" 
+}
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwODYyMTYsImlhdCI6MTYwOTk5OTgxNiwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjkifQ.SY5ydQFxPK0sgd8fS7hk2VUK7JWw_45KH4JOdjt0dfQ
+
+### 
+POST http://0.0.0.0:7788/mock/86/license/api/v1/user/license
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwODYyMTYsImlhdCI6MTYwOTk5OTgxNiwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjkifQ.SY5ydQFxPK0sgd8fS7hk2VUK7JWw_45KH4JOdjt0dfQ
+
+{
+    "quota":799, 
+    "period":899,
+    "uuid":"DELLDELLDELLDELLDELLDELLDELLDELLDELL",
+    "corporation":"DELL",
+    "version":"v3.0",
+    "homelicense":"测试版:v8.0",
+    "username":"user9"
+}
+
+### 
+POST http://0.0.0.0:7788/mock/86/license/api/v1/admin/license
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTAwODYyMTYsImlhdCI6MTYwOTk5OTgxNiwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjkifQ.SY5ydQFxPK0sgd8fS7hk2VUK7JWw_45KH4JOdjt0dfQ
+
+{
+    "updateid": 20,
+    "keyid": 16
+}
+
+
+
+
+
+
+### POST 用户注册
+POST http://0.0.0.0:7788/regist
+Content-Type: application/json
+
+{
+    "username": "user10",
+    "password": "number10'spassword" 
+}
+
+### POST 用户登录
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "user10",
+    "password": "number10'spassword" 
+}
+
+### GET 用户查询申请license的状态
+GET http://0.0.0.0:7788/licenseguard/api/v1/user/license/user7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTA1MjI5NzksImlhdCI6MTYxMDQzNjU3OSwiaXNhZG1pbiI6ZmFsc2UsInVzZXJuYW1lIjoidXNlcjEwIn0.dYKe93zfT8eEOpdG6dl0cR5hEaVQRqI-vyNuPZ7dG4A
+
+### POST 管理员登录
+POST http://0.0.0.0:7788/login
+Content-Type: application/json
+
+{
+    "username": "admin2",
+    "password": "Tpaas@123Admin2_Troila" 
+}
+
+### GET 管理员查询所有的公私钥对详细信息
+GET http://0.0.0.0:7788/licenseguard/api/v1/admin/key
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTA1MjMwODQsImlhdCI6MTYxMDQzNjY4NCwiaXNhZG1pbiI6dHJ1ZSwidXNlcm5hbWUiOiJhZG1pbjIifQ.uuRVlQjFzqhaPVciS5j4rtj2zOzLlCHspNVz_Io5Kd0

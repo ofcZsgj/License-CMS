@@ -1,0 +1,3 @@
+cmd/lisence/lisence.exe
+pkg/dao/licensedb/db_test.go
+cmd/lisence/restapi.http
